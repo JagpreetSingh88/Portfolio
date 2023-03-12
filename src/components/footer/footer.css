@@ -1,0 +1,47 @@
+.footer {
+  padding: 0 0 50px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  border-radius: 50%;
+  margin-right: 6px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.name {
+  margin-top: 3rem;
+}
+
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+.social-icon a svg {
+  width: 40%;
+  z-index: 1;
+  transform: 0.3s ease-in-out;
+}
+.social-icon a:hover svg {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
+    hue-rotate(346deg);
+}

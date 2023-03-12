@@ -1,0 +1,39 @@
+.skill-box {
+  border: 1px solid #fff;
+}
+.item img {
+  width: 80px;
+  height: 80px;
+
+}
+
+
+.skill-box {
+  /* border: 1px solid #fff; */
+  padding: 30px 30px;
+  background-color: #151515;
+  border-radius: 64px;
+  text-align: center;
+  margin-top: -60px;
+}
+.skill h5 {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px;
+  margin-top: 20px;
+}
+.skill p {
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
+}
+.skill-slider {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.skill-slider .item {
+  margin: 0 auto 15px 0;
+}
