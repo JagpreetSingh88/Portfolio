@@ -20,10 +20,9 @@ nav.Navbar {
   padding: 0px 0;
   background-color: #121212;
 }
-@media screen and (max-width: "576px") {
-  .toggle {
-    background-color: #121212;
-  }
+
+.toggle {
+  background-color: #121212;
 }
 
 .navlink {

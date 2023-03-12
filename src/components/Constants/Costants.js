@@ -172,7 +172,7 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Jagpreet proved me wrong.",
     name: "Sara",
     designation: "CEO",
     company: "Acmerounds Co",
@@ -180,7 +180,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "I've never met a web developer who truly cares about their clients' success like Jagpreet does.",
     name: "Rohit",
     designation: "COO",
     company: "DEFRINGS Corp",
@@ -188,8 +188,8 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Ranveer Wang",
+      "After Jagpreet optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    name: "Ranveer Singh",
     designation: "CTO",
     company: "456 Enterprises",
     image: "https://randomuser.me/api/portraits/women/6.jpg",

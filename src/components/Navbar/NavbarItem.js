@@ -26,14 +26,14 @@ const NavbarItem = () => {
   return (
     <nav className="Navbar">
       <Navbar variant="dark" expand="lg" className={scroll ? "scroll" : ""}>
-        <Container className="NavStyle">
+        <Container className="NavStyle toggle">
           <Navbar.Brand href="home">
             Jagpreet <span className="text-red-900 font-bold text-3xl">S</span>
             ingh
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="toggle" >
-            <Nav className="me-auto " id="toggleNav">
+            <Nav className="me-auto ">
               <Nav.Link
                 href="#home"
                 smooth
