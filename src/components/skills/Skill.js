@@ -32,17 +32,14 @@ const Skill = () => {
       <Container>
         <Row>
           <Col xs={12} sm={12} md={12} xl={12}>
-            <div className="skill-box">
+            <div className="skill-box tracking-normal text-justify">
               <h2 className={Styles.sectionHeadText}>Skills</h2>
               <p className={Styles.sectionSubText}>
                 The passion for coding never dies and the enthusiasm for coding
-                always keeps on growing so till now I have got expertise in{" "}
-                <span>
-                  HTML, CSS, JAVASCRIOT,REACT,NODE,THREE JS,PYTHON,DJANGO AND
-                  ANY MORE languages{" "}
-                </span>
-                , which inturn helps me to build a professinal and stunning
-                websites.
+                always keeps on growing so till now I have got expertise in
+                html, css, javascript, react, redux, node and python and many
+                more languages, which inturn helps me to build a professinal and
+                stunning websites.
               </p>
               <Carousel
                 responsive={responsive}
