@@ -21,14 +21,31 @@ const Contact = () => {
   };
   const [buttonText, setButtonText] = useState("Send");
   const [data, setData] = useState(formInitial);
+  const [formerror, SetFormerror] = useState([]);
   const onChangeData = (name, value) => {
-    setData({ [name]: value });
+    setData({ ...data, [name]: value });
   };
-  const HandleClick = async (e) => {
+  const formValidate = () => {
+    let err = {};
+    if (data.name === "") {
+      err.username = "name is required";
+    }
+    if (data.email === "") {
+      err.email = "email is required";
+    }
+    if (data.phoneNumber === "") {
+      err.phoneNumber = "number is required";
+    }
+    if (data.message === "") {
+      err.message = "message is required";
+    }
+    SetFormerror({ ...err });
+    return Object.keys(err).length < 1;
+  };
+  const HandleClick = (e) => {
     e.preventDefault();
-    if (!data.name || !data.email || !data.message) {
-      toast.error("Enter valid details");
-    } else {
+    let isValid = formValidate();
+    if (isValid) {
       setButtonText("Sending");
 
       emailjs
@@ -50,8 +67,13 @@ const Contact = () => {
       setData(formInitial);
       toast.success("Thanks for sending,We'll revert shortly!");
       setButtonText("Send");
+      return false;
+    } else {
+      toast.error("Enter valid details");
+      setData(formInitial);
     }
   };
+  console.group(data);
   return (
     <section className="contactUs bg-tertiary">
       <Container>
@@ -69,7 +91,6 @@ const Contact = () => {
                   placeholder="Please enter your first name..."
                   value={data.name}
                   name="user_name"
-                  required
                   type="name"
                   onChange={(e) => onChangeData("name", e.target.value)}
                 />
@@ -81,7 +102,6 @@ const Contact = () => {
                   className="input placeholder:Styles.heroSubText"
                   placeholder="Please enter your email ID..."
                   value={data.email}
-                  required
                   type="email"
                   name="user_email"
                   onChange={(e) => onChangeData("email", e.target.value)}
@@ -95,9 +115,8 @@ const Contact = () => {
                   value={data.phoneNumber}
                   placeholder="Please enter your phone Number..."
                   name="user_phone"
-                  required
                   type="number"
-                  onChange={(e) => onChangeData("phone Number", e.target.value)}
+                  onChange={(e) => onChangeData("phoneNumber", e.target.value)}
                 />
               </Form.Group>
               <InputGroup>
@@ -105,7 +124,6 @@ const Contact = () => {
                 <Form.Control
                   className="input placeholder:Styles.heroSubText"
                   as="textarea"
-                  required
                   name="message"
                   value={data.message}
                   placeholder="Please leave a message for us..."
