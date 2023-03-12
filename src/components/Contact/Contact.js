@@ -14,8 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const form = useRef();
   const formInitial = {
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phoneNumber: "",
     message: "",
@@ -27,26 +26,31 @@ const Contact = () => {
   };
   const HandleClick = async (e) => {
     e.preventDefault();
-    setButtonText("Sending");
-    emailjs
-      .sendForm(
-        "service_vzu7p38",
-        "template_uncmbm1",
-        form.current,
-        "YU_Ifo1aIMBNpSsVh"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    setButtonText("Sent");
-    setData(formInitial);
-    toast.success("Thanks for sending,We'll revert shortly!");
-    setButtonText("Send");
+    if (!data.name || !data.email || !data.message) {
+      toast.error("Enter valid details");
+    } else {
+      setButtonText("Sending");
+
+      emailjs
+        .sendForm(
+          "service_vzu7p38",
+          "template_uncmbm1",
+          form.current,
+          "YU_Ifo1aIMBNpSsVh"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      setButtonText("Sent");
+      setData(formInitial);
+      toast.success("Thanks for sending,We'll revert shortly!");
+      setButtonText("Send");
+    }
   };
   return (
     <section className="contactUs bg-tertiary">
@@ -59,28 +63,18 @@ const Contact = () => {
             <h1 className={Styles.heroHeadText}>Get In Touch</h1>
             <Form ref={form} className="form" id="contact">
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>Name</Form.Label>
                 <Form.Control
                   className="input placeholder:Styles.heroSubText"
                   placeholder="Please enter your first name..."
-                  value={data.firstName}
+                  value={data.name}
                   name="user_name"
                   required
                   type="name"
-                  onChange={(e) => onChangeData("firstname", e.target.value)}
+                  onChange={(e) => onChangeData("name", e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control
-                  className="input placeholder:Styles.heroSubText"
-                  placeholder="Please enter your last name..."
-                  value={data.lastName}
-                  type="name"
-                  required
-                  onChange={(e) => onChangeData("last Name", e.target.value)}
-                />
-              </Form.Group>
+
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
