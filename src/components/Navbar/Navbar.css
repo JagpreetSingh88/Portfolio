@@ -20,6 +20,9 @@ nav.Navbar {
   padding: 0px 0;
   background-color: #121212;
 }
+.toggle{
+  background-color: #121212;
+}
 .navlink {
   font-weight: 400;
   color: #ffffffa7;
