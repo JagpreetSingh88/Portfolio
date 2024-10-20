@@ -15,8 +15,8 @@ import { Styles } from "../styles/Style";
 const Slider = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleted, setIsDeleted] = useState(false);
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX designer"];
+  const [delta, setDelta] = useState(300 - Math.random() * 150);
+  const toRotate = ["Data scientist","Data Analyst","Web Developer", "Web Designer", "UI/UX designer"];
   const [text, setText] = useState("");
 
   const period = 2000;
